@@ -102,7 +102,7 @@ void Interface::menu() {
 					getline(cin, lixo);
 					// if (lixo == "");
 					if (lixo.length() == 1 && isdigit(lixo[0])){
-						if ((lixo[0] == 1 || lixo[0] == 2)){
+						if ((lixo == "1" || lixo == "2")){
 							caminho = stoi(lixo);
 							break;
 						}
