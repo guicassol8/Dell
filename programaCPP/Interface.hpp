@@ -3,6 +3,12 @@
 #include <fstream>
 #include <algorithm>
 #include <utility>
+#include <FL/Fl.H>
+#include <FL/Fl_Window.H>
+#include <FL/Fl_Box.H>
+#include <FL/Fl_PNG_Image.H>
+#include <FL/Fl_Input.H>
+#include <FL/Fl_Button.H>
 
 //Definicao de cores para o terminal
 #define RESET   "\033[0m"
@@ -35,6 +41,7 @@ class Interface{
 		void menuResultado();
 		void printSorteio();
 		bool lerArquivo(string nomeArquivo);
+		bool confirmaInput(string info);
 };
 
 bool isNumber(string str);

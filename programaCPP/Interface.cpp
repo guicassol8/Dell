@@ -46,6 +46,7 @@ void Interface::printSorteio(){
 }
 
 void Interface::menu() {
+	clearTerminal();
     int escolha = 0;
 	string nome;
 	string escolhaTeste = "";
@@ -78,33 +79,56 @@ void Interface::menu() {
                 break;
             case 1:
 				clearTerminal();
-                cout << "Digite o nome do apostador" << endl;
 				while(1){
+					cout << "Digite o nome do apostador" << endl;
             		getline(cin,nome);
 					if (nome != ""){
-						break;
+						if (confirmaInput(nome)){
+							clearTerminal();
+							break;
+						}
+						else{
+							clearTerminal();
+							continue;
+						}
 					}
+					clearTerminal();
 					cout << "Nome invalido" << endl;
 				}
 				while (1){
 					cout << "Digite o cpf (apenas numeros)" << endl;
 					getline(cin,cpf);
 					if (verificaCPF(cpf)){
-						break;
+						if (confirmaInput(cpf)){
+							clearTerminal();
+							break;
+						}
+						else{
+							clearTerminal();
+							continue;
+						}
 					}
+					clearTerminal();
 					cout << "CPF invalido" << endl;
 				}
 				clearTerminal();
 				while (1){
 					cout << "Você gostaria de digitar os numeros da aposta?" << endl;
 					cout << "[1] - Sim" << endl;
-					cout << "[2] - Nao" << endl;
+					cout << "[2] - Surpresinha" << endl;
 					getline(cin, lixo);
 					// if (lixo == "");
 					if (lixo.length() == 1 && isdigit(lixo[0])){
 						if ((lixo == "1" || lixo == "2")){
-							caminho = stoi(lixo);
-							break;
+							if (confirmaInput(lixo)){
+								clearTerminal();
+								caminho = stoi(lixo);
+								break;
+							}
+							else{
+								clearTerminal();
+								continue;
+							}
 						}
 					}
 					clearTerminal();
@@ -113,17 +137,22 @@ void Interface::menu() {
 				if (caminho == 1){
 					while (i < 5) {
 						lixo = "a";
-						cout << "Digite um numero de 1 a 50 " << endl;
 						while (1){
+						cout << "Digite um numero de 1 a 50 " << endl;
 							getline(cin, lixo);
 							if(lixo == "");
 							else if (isNumber(lixo) && (aposta.find(stoi(lixo)) == aposta.end())){
 								break;
 							}
+							clearTerminal();
 							cout << "Numero invalido" << endl;
 						}
 						numeroAposta = stoi(lixo);
 						if (numeroAposta > 0 && numeroAposta < 51) {
+							if (!confirmaInput(lixo)){
+								clearTerminal();
+								continue;
+							}
 							aposta.insert(numeroAposta);
 							i++;
 							clearTerminal();
@@ -161,12 +190,17 @@ void Interface::menu() {
                 break;
 			case 4:
 				clearTerminal();
-				cout << "Digite o nome do arquivo" << endl;
 				while(1){
+					cout << "Digite o nome do arquivo" << endl;
 					getline(cin, lixo);
+					if (!confirmaInput(lixo)){
+						clearTerminal();
+						continue;
+					}
 					if(lerArquivo(lixo)){
 						break;
 					}
+					clearTerminal();
 					cout << "Arquivo invalido" << endl;
 				}
 				escolha = 0;
@@ -241,6 +275,7 @@ void Interface::menuExplicacao(){
 	cout << "Explicacao" << endl;
 	cout << "A aposta consiste em 5 numeros de 1 a 50, cada numero pode aparecer apenas uma vez na aposta." << endl;
 	cout << "Ao finalizar as apostas, o sistema sorteia os numeros de 1 a 50 e verifica se algum dos apostadores ganhou." << endl;
+	cout << "Apos o primeiro registro de apostador, sempre que o mesmo cpf for usado a aposta ira para aquele cpf, independente do nome colocado" << endl;
 	cout << "Existem duas maneiras de registrar apostadores:" << endl;
 	cout << endl << "Input - O input foi feito para o usuario, adicionar pelo proprio terminal impede com que dados incorretos sejam armazenados";
 	cout << endl << "Arquivo - O arquivo foi feito para o administrador do sorteio, no caso do arquivo ele aceita informacoes incorretas";
@@ -252,7 +287,7 @@ void Interface::menuExplicacao(){
 	cout << "Aposta 3" << endl;
 	cout << "Aposta 4" << endl;
 	cout << "Aposta 5" << endl;
-	cout << endl << "Qualquer informação incorreta escrita no arquivo pode causar podera causar comportamentos inesperados"  << endl;
+	cout << endl << "Qualquer informação incorreta escrita no arquivo pode causar comportamentos inesperados"  << endl;
 	cout << "Digite qualquer coisa para continuar" << endl;
 	string lixo;
 	getline(cin, lixo);
@@ -303,5 +338,25 @@ void sortearAposta(unordered_set<int> &aposta){
 				break;
 			}
 		}
+	}
+}
+
+bool Interface::confirmaInput(string info){
+	clearTerminal();
+	string confirmacao;
+	while(1){
+		cout << "Voce deseja salvar essa informacao?" << endl;
+		cout << "\"" << info << "\"" << endl;
+		cout << "[s] - Sim" << endl;
+		cout << "[n] - Nao" << endl;
+		getline(cin,confirmacao);
+		if (confirmacao == "s" || confirmacao == "S"){
+			return true;
+		}
+		else if (confirmacao == "n" || confirmacao == "N"){
+			return false;
+		}
+		clearTerminal();
+		cout << "Opcao invalida" << endl;
 	}
 }

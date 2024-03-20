@@ -4,6 +4,7 @@ Aposta::Aposta(int codigo, Pessoa *pessoa, unordered_set<int> &aposta){
 	this->codigoAposta = 1000 + codigo;
 	this->aposta = aposta;
 	this->pessoa = pessoa;
+	/*For usado para transferir numeros no hash set para um vetor normal*/
 	for (auto apostas : aposta){
 		apostaVector.push_back(apostas);
 	}
@@ -14,6 +15,8 @@ Aposta::~Aposta(){
 		cout << "Aposta destruida" << endl;
 	#endif
 }
+
+/*Sets e Geters*/
 
 int Aposta::getCodigoAposta(){
 	return codigoAposta;
@@ -45,10 +48,12 @@ bool Aposta::deletNum(int numero){
 	return false;
 }
 
+/*Retorna uma referencia para a o apostador*/
 Pessoa *Aposta::getPessoa(){
 	return pessoa;
 }
 
+/*Imprime todas apostas*/
 void Aposta::imprimeAposta(){
 	cout << "Aposta " << codigoAposta << ": ";
 	for(auto it = aposta.begin(); it != aposta.end(); it++){
@@ -57,6 +62,7 @@ void Aposta::imprimeAposta(){
 	cout << endl;
 }
 
+/*Retornar todos numeros da aposta em formato de string*/
 string Aposta::getApostaString(){
 	stringstream ss;
 	for(auto it = aposta.begin(); it != aposta.end(); it++){
@@ -66,6 +72,7 @@ string Aposta::getApostaString(){
 	return ss.str();
 }
 
+/*Retorna o vector de apostas*/
 vector<int> Aposta::getApostaVector(){
 	return apostaVector;
 }

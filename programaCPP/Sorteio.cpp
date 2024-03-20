@@ -10,7 +10,6 @@ Sorteio::Sorteio(){
 	this->numEdicao = 0;
 }
 
-
 int Sorteio::getNumEdicao(){
     return this->numEdicao;
 }

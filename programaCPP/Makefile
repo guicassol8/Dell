@@ -21,4 +21,4 @@ Aposta.o:		Aposta.cpp Aposta.hpp Pessoa.hpp
 					g++ ${CFLAGS} Aposta.cpp
 
 clean:
-				rm -f main main.o Pessoa.o Sorteio.o Aposta.o
+				rm -f main main.o Pessoa.o Sorteio.o Aposta.o Interface.o

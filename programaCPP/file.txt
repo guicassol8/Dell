@@ -1,0 +1,301 @@
+Guilherme Roth Cassol
+05406915002
+18
+29
+40
+50
+10
+Arthur Passos Fabricio
+15043381510
+4
+12
+17
+23
+34
+Bruno Barbosa Goku
+02408600026
+28
+20
+30
+49
+2
+Mariana Rodrigues Nunes
+60321589743
+14
+25
+36
+47
+48
+João da Silva Santos
+87593162405
+3
+16
+29
+32
+45
+Amanda Oliveira Costa
+42198765023
+9
+21
+34
+40
+50
+Fernando Almeida Pereira
+76543219876
+7
+18
+27
+38
+49
+Laura Martins Lima
+15874203698
+5
+12
+24
+37
+46
+Rafaela Mendes Silva
+31057298406
+7
+18
+29
+36
+45
+Carlos Eduardo Oliveira
+89215630748
+3
+12
+21
+33
+48
+Renata Santos Souza
+65482019357
+9
+22
+31
+40
+50
+Thiago Lima Costa
+43790162584
+5
+14
+27
+39
+42
+Juliana Pereira Fernandes
+72638195402
+11
+23
+35
+44
+49
+Mariana Almeida Carvalho
+57293681045
+8
+17
+28
+37
+46
+Lucas Rodrigues Santos
+81940325760
+4
+15
+26
+38
+47
+Fernanda Oliveira Lima
+63571948203
+6
+19
+30
+41
+49
+Gabriel Silva Pereira
+29470185632
+10
+20
+32
+43
+48
+Carolina Souza Santos
+50892361475
+13
+24
+34
+39
+50
+Clara Pereira Silva
+75091283406
+8
+17
+26
+35
+44
+Daniel Santos Oliveira
+42975601823
+5
+14
+23
+32
+41
+Ana Carolina Fernandes
+81234569701
+2
+11
+20
+29
+38
+Pedro Lima Almeida
+56789012354
+9
+18
+27
+36
+45
+Luciana Oliveira Costa
+34567890123
+6
+15
+24
+33
+42
+Marcelo Fernandes Santos
+98701234567
+7
+16
+25
+34
+43
+Isabela Almeida Pereira
+65432109876
+4
+13
+22
+31
+40
+Gustavo Silva Lima
+21098765432
+3
+12
+21
+30
+39
+Juliana Costa Oliveira
+78901234567
+1
+10
+19
+28
+37
+Carlos Eduardo Oliveira
+42975601823
+1
+3
+5
+7
+9
+Mariana Rodrigues Nunes
+78901234567
+2
+4
+6
+8
+10
+Fernando Almeida Pereira
+81234569701
+11
+13
+15
+17
+19
+Ana Carolina Fernandes
+75091283406
+12
+14
+16
+18
+20
+Pedro Lima Almeida
+65432109876
+21
+23
+25
+27
+29
+Luciana Oliveira Costa
+56789012354
+22
+24
+26
+28
+30
+Gustavo Silva Lima
+34567890123
+31
+33
+35
+37
+39
+Clara Pereira Silva
+98701234567
+32
+34
+36
+38
+40
+Carlos Eduardo Oliveira
+42975601823
+41
+43
+45
+47
+49
+Mariana Rodrigues Nunes
+78901234567
+42
+44
+46
+48
+50
+Fernando Almeida Pereira
+81234569701
+1
+3
+5
+7
+9
+Ana Carolina Fernandes
+75091283406
+2
+4
+6
+8
+10
+Pedro Lima Almeida
+65432109876
+11
+13
+15
+17
+19
+Luciana Oliveira Costa
+56789012354
+12
+14
+16
+18
+20
+Gustavo Silva Lima
+34567890123
+21
+23
+25
+27
+29
+Clara Pereira Silva
+98701234567
+22
+24
+26
+28
+30
