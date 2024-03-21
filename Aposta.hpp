@@ -31,7 +31,3 @@ class Aposta {
 };
 
 #endif
-
-/*A maneira que está implementada é puramente direcionada a performance e poderia ser implementada com um simples array
-mas a quantidade de memoria utilizada será maior, daria pra usar array pq interar em um array pequeno é tão rapido quanto um hashset
-mas a quantidade de memoria a mais não é tão grotesca quanto poderia */

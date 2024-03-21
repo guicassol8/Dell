@@ -1,12 +1,13 @@
 #include "Pessoa.hpp"
 #include "Aposta.hpp"
 
+/*Construtor e Destrutor*/
 Pessoa::Pessoa(string nome, string cpf){
 	this->nome = nome;
 	this->cpf = cpf;
-	quantDinheiro = 0;
 }
 
+/*Delete todas apostas feitas*/
 Pessoa::~Pessoa(){
 	int tamanho = apostas.size();
 	for (int i = 0; i < tamanho; i++){
@@ -17,16 +18,13 @@ Pessoa::~Pessoa(){
 	#endif
 }
 
+/*Geters e Seters*/
 string Pessoa::getNome(){
 	return nome;
 }
 
 string Pessoa::getCpf(){
 	return cpf;
-}
-
-int Pessoa::getQuantDinheiro(){
-	return quantDinheiro;
 }
 
 void Pessoa::setNome(string nome){
@@ -37,24 +35,22 @@ void Pessoa::setCpf(string cpf){
 	this->cpf = cpf;
 }
 
-void Pessoa::setQuantDinheiro(int quantDinheiro){
-	this->quantDinheiro = quantDinheiro;
+vector<Aposta*> Pessoa::getApostas(){
+	return apostas;
 }
 
 void Pessoa::addAposta(Aposta *aposta){
 	apostas.push_back(aposta);
 }
 
-vector<Aposta*> Pessoa::getApostas(){
-	return apostas;
-}
-
+//Retorna dados da pessoa em forma de string (sem endl)
 string Pessoa::getDados(){
 	stringstream ss;
-	ss << nome << " " << cpf << " " << quantDinheiro;
+	ss << RED << nome << RESET << YELLOW << " CPF: " << cpf << RESET;
 	return ss.str();
 }
 
+//Retorna as apostas feitas em formato de string
 string Pessoa::getApostasString(){
 	stringstream ss;
 	for(int i = 0; i < apostas.size(); i++){
@@ -63,6 +59,7 @@ string Pessoa::getApostasString(){
 	return ss.str();
 }
 
+/*Operators usados pra fazer o sort no momento do vencedor*/
 bool Pessoa::operator>(const Pessoa &p) const{
 	return this->nome > p.nome;
 }

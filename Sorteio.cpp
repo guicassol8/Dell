@@ -60,19 +60,6 @@ bool Sorteio::sortear(int x){
 	return validar;
 }
 
-/*Para evitar complexidade quadratica e observacoes desnecessarias é uma boa toda vez que verificar que certo elemento ja esta nos
-apostados remover ele da lista, para evitar verifica-lo denovo*/
-
-/*Outra otimizacao poderia ser ordenar pelo tamanho do vetor presente em aposta e ele vai parar de verificar se os unicos com 1 de tamanho vencerem
-So que eu nao acho q essa otimizacao seja muito necessaria
-
-Outra otimizacao talvez inutil é de alguma maneira conseguir as apostas para verem suas semelhancas e junta-las para evitar passar mais de uma vez 
-em algo igual
-
-Tambem da para fazer um hash map onde o numero é a chave e dentro nos numeros estão a chave da aposta, assim toda vez que um numero novo aparece ele
-vai acessar a posicao e dar um sinal para a aposta tirar de seu vetor o numero, assim tornando absurdamente mais rápido
-*/
-
 vector<int> Sorteio::getSorteados(){
 	return this->sorteados;
 }
@@ -101,6 +88,7 @@ int Sorteio::geraRandom(){
 	return rand;
 }
 
+/*Verifica em O(n) se o numero sorteado já foi sorteado*/
 bool Sorteio::inList(int x){
 	for (int i = 0; i < sorteados.size(); i++){
 		if (sorteados[i] == x){
@@ -110,6 +98,7 @@ bool Sorteio::inList(int x){
 	return false;
 }
 
+//Funcao estática usada para conseguir comparar um vector pair e ordenar os vencedores usando o sort()
 bool Sorteio::compararPares(const pair<Pessoa*,Aposta*>& a, const pair<Pessoa*,Aposta*>& b){
 	return Pessoa::compararPonteiros(a.first, b.first);
 }

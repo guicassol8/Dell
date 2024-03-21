@@ -31,6 +31,3 @@ class Sorteio {
 
 
 #endif
-/*Acredito que ass funcoes estao funcionando ele tira da lista e retorna true se o hash estiver vazio
-Importante falar que a interface vai ter que cuidar da entrada de dados correta!*/
-/*Usar um hash map é pior em questao de memoria, mas é muuito melhor em questão de performance*/

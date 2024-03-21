@@ -1,10 +1,11 @@
 {
+	"C_Cpp.default.compilerPath": "/usr/bin/clang",
 	"files.associations": {
+		"string": "cpp",
 		"ostream": "cpp",
-		"random": "cpp",
-		"unordered_set": "cpp",
-		"iostream": "cpp",
-		"new": "cpp",
-		"tuple": "cpp"
+		"array": "cpp",
+		"string_view": "cpp",
+		"initializer_list": "cpp",
+		"utility": "cpp"
 	}
 }

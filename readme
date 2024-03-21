@@ -1,0 +1,3 @@
+Essa aplicação foi feita para rodar no linux.
+Basta usar o comando 'make' no terminal e executar o programa ./main
+Se quiser excluir os arquivos desnecessarios, basta usar 'make clean'

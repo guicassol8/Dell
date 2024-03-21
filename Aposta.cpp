@@ -1,5 +1,7 @@
 #include "Aposta.hpp"
 
+//Construtor e Destrutor
+
 Aposta::Aposta(int codigo, Pessoa *pessoa, unordered_set<int> &aposta){
 	this->codigoAposta = 1000 + codigo;
 	this->aposta = aposta;

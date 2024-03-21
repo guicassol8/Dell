@@ -1,14 +1,8 @@
 #include "Sorteio.hpp"
-#include <cstdlib>
-#include <fstream>
 #include <algorithm>
 #include <utility>
-#include <FL/Fl.H>
-#include <FL/Fl_Window.H>
-#include <FL/Fl_Box.H>
-#include <FL/Fl_PNG_Image.H>
-#include <FL/Fl_Input.H>
-#include <FL/Fl_Button.H>
+#include <thread>
+#include <chrono>
 
 //Definicao de cores para o terminal
 #define RESET   "\033[0m"
@@ -28,6 +22,7 @@ class Interface{
 	private:
 		Sorteio sorteio;
 		int quantApostas;
+		int quantRandom;
 		unordered_map<string, Pessoa*> apostadores;
     public:
 		Interface(int edicao);
@@ -35,13 +30,14 @@ class Interface{
 		~Interface();
 		void addAposta(string nome, string cpf, unordered_set<int> aposta);
 		void menu();
-		void menuAposta();
-		void menuSorteio();
 		void menuExplicacao();
 		void menuResultado();
+		void menuPremiacao(int valor);
 		void printSorteio();
-		bool lerArquivo(string nomeArquivo);
+		bool verSair(string input);
 		bool confirmaInput(string info);
+		void criarCasos(int quantidade);
+		unordered_set<int> randomAposta();
 };
 
 bool isNumber(string str);

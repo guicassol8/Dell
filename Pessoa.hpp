@@ -2,6 +2,12 @@
 #include <sstream>
 #include "Aposta.hpp"
 
+//Definicao de cores para o terminal
+#define RESET   "\033[0m"
+#define RED     "\033[31m"
+#define GREEN   "\033[32m"
+#define YELLOW  "\033[33m"
+
 class Aposta;
 
 #ifndef _PESSOA_HPP
@@ -13,17 +19,14 @@ class Pessoa{
 	private:
 		string nome;
 		string cpf;
-		int quantDinheiro;
 		vector <Aposta*> apostas;
 	public:
 		Pessoa(string nome, string cpf);
 		~Pessoa();
 		string getNome();
 		string getCpf();
-		int getQuantDinheiro();
 		void setNome(string nome);
 		void setCpf(string cpf);
-		void setQuantDinheiro(int quantDinheiro);
 		void addAposta(Aposta* aposta);
 		vector <Aposta*> getApostas();
 		string getDados();
